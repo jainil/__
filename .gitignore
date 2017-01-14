@@ -1,0 +1,8 @@
+.DS_Store
+*.class
+*.iml
+*.out
+*.pyc
+node_modules/
+.idea/
+
