@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>MemeMaker-Simple</title>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <style>
+    #image-container {
+      display: flex;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <input type="file" id="file" />  
+  </div>
+  <div id="image-container">
+    <canvas width="500" height="500"></canvas>
+    <div>
+      <button id="mogrify">mogrify</button>
+    </div>
+  </div>
+  <script>
+
+    function greenify(data) {
+      for (var i = data.length - 1; i >= 0; i = i-40) {
+        data[i] = 255;
+        data[i-1] = 0;
+        data[i-2] = 255;
+        data[i-3] = 0;
+      }
+      return data;
+    }
+
+    // laziest method from: http://www.tannerhelland.com/3643/grayscale-image-algorithm-vb6/
+    function grayscalify(imageData) {
+      var gray;
+      var data = imageData.data;
+      for (var i = data.length - 1; i >= 0; i = i-4) {
+        gray = data[i-2];
+        data[i] = 255;
+
+        data[i-1] = gray;
+        data[i-3] = gray;
+        // data[i-2] = data[i-2];
+      }
+      return imageData;
+    }
+
+    function mogrify() {
+      var canvas = document.querySelector('canvas');
+      var ctx = canvas.getContext("2d");
+        // manipulate the image data
+        var imageData = ctx.getImageData(0, 0, 500, 500);
+        ctx.putImageData(grayscalify(imageData), 0, 0);
+    }
+
+    function drawImage(image) {
+      // Get Canvas2DContext
+      var canvas = document.querySelector('canvas');
+      var ctx = canvas.getContext("2d");
+      if (image != null)
+        ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+
+      // manipulate the image data
+      var imageData = ctx.getImageData(0, 0, 500, 500);
+      for (var i = imageData.length - 1; i >= 0; i--) {
+        imageData[i] = 255;
+      }
+      ctx.putImageData(imageData, 0, 0);
+    }
+
+    function handleFileSelect(evt) {
+      var canvasWidth = 500;
+      var canvasHeight = 500;
+      var file = evt.target.files[0];
+      
+      var reader = new FileReader();
+      reader.onload = function(fileObject) {
+        var data = fileObject.target.result;
+        
+        // Create an image object
+        var image = new Image();
+        image.onload = function() {
+          window.imageSrc = this;
+          drawImage(window.imageSrc);
+        }
+        
+        // Set image data to background image.
+        image.src = data;
+        // console.log(fileObject.target.result);
+      };
+      reader.readAsDataURL(file);
+    }
+    
+    document.getElementById('file').addEventListener('change', handleFileSelect, false);
+
+    document.getElementById('mogrify').addEventListener('click', mogrify);
+  </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Animation-Simple</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+</head>
+
+<body>
+  <video id="v" controls loop src="green.mp4"></video>
+  <canvas id="c"></canvas>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var canvas = document.getElementById('c');
+      var video = document.getElementById('v');
+      var ctx = canvas.getContext('2d');
+
+      var backCanvas = document.createElement('canvas');
+      var backCtx = backCanvas.getContext('2d');
+
+      video.addEventListener('loadedmetadata', function() {
+        canvas.width = this.videoWidth;
+        canvas.height = this.videoHeight;        
+        backCanvas.width = this.videoWidth;
+        backCanvas.height = this.videoHeight;
+      });
+
+      function draw() {
+        var imageData;
+        backCtx.drawImage(video, 0, 0);
+        imageData = backCtx.getImageData(0, 0, backCanvas.width, backCanvas.height);
+        ctx.putImageData(grayscalify(imageData), 0, 0);
+        requestAnimationFrame(draw);
+      }
+
+      video.addEventListener('play', function() {
+        if (video.paused || video.ended) return;
+        draw();
+      });
+    });
+
+    // laziest method from: http://www.tannerhelland.com/3643/grayscale-image-algorithm-vb6/
+    function grayscalify(imageData) {
+      var gray;
+      var data = imageData.data;
+      for (var i = data.length - 1; i >= 0; i = i-4) {
+        gray = data[i-2];
+        data[i] = 255;
+
+        data[i-1] = gray;
+        data[i-3] = gray;
+        // data[i-2] = data[i-2];
+      }
+      return imageData;
+    }
+ 
+  </script>
+</body>
+</html>
