@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>noobness</title>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta charset="UTF-8">
+    <style type="text/css">
+      html, body, #map_canvas {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }
+    </style>
+    <script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript">
+      var map;
+      var markerRandom=[];
+      function initialize2() {
+        var myOptions = {
+          zoom: 10,
+          center: new google.maps.LatLng(34.156098,-118.131808),
+          mapTypeId: google.maps.MapTypeId.TERRAIN
+        };
+        map = new google.maps.Map(document.getElementById('map_canvas'),
+            myOptions);
+			
+		//put random icons and time them out ...
+		//var tiny = new GIcon();
+		//tiny.image = "images/tiny_red.png";
+		//tiny.shadow = "images/tiny_red_shadow.png";
+		//tiny.iconSize = new GSize(12, 20);
+		//tiny.shadowSize = new GSize(22, 20);
+		//tiny.iconAnchor = new GPoint(6, 20);
+		//map.setCenter(new GLatLng(51.5, 0), 8);
+		//for (var i = 0; i < 20; i++) {
+		//	var point = new GLatLng(34+Math.random(),
+         //                 -118+Math.random());
+		//map.addOverlay(new GMarker(point, { icon: tiny }));
+	window.setInterval(function(){	
+	var image = 'images/tiny_red.png';
+        var myLatLng = new google.maps.LatLng(34.156098, -118.131808);
+        if (markerRandom){
+        for (i in markerRandom) {
+                markerRandom[i].setMap(null);
+            }
+                markerRandom.length = 0;
+        }
+         for (var i = 0; i < 20; i++) {
+		var marker = new google.maps.Marker({
+                position: new google.maps.LatLng(34+Math.random(),-118+Math.random()),
+                map: map,
+                icon: image
+            });
+            markerRandom.push(marker);
+        }
+        },1000);
+    }	
+  
+    google.maps.event.addDomListener(window, 'load', initialize2);
+		
+    </script>
+  </head>
+  <body>
+    <div id="map_canvas" ></div>
+  </body>
+</html>

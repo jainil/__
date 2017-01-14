@@ -1,0 +1,92 @@
+http://free.worldweatheronline.com/feed/weather.ashx?q=24.00, 24.00&key=d9854b4c29205248122010&format=json&no_of_days=2&includeLocation=yes
+
+{
+  "data": {
+    "current_condition": [
+      {
+        "cloudcover": "33",
+        "humidity": "31",
+        "observation_time": "09:40 AM",
+        "precipMM": "0.0",
+        "pressure": "1022",
+        "temp_C": "15",
+        "temp_F": "58",
+        "visibility": "10",
+        "weatherCode": "116",
+        "weatherDesc": [
+          {
+            "value": "Partly Cloudy"
+          }
+        ],
+        "weatherIconUrl": [
+          {
+            "value": "http://www.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0002_sunny_intervals.png"
+          }
+        ],
+        "winddir16Point": "ESE",
+        "winddirDegree": "107",
+        "windspeedKmph": "18",
+        "windspeedMiles": "11"
+      }
+    ],
+    "nearest_area": [
+      {
+        "areaName": [
+          {
+            "value": "Al Jawf"
+          }
+        ],
+        "country": [
+          {
+            "value": "Libya"
+          }
+        ],
+        "latitude": "24.200",
+        "longitude": "23.300",
+        "population": "0",
+        "region": [
+          {
+            "value": "Al Kufrah"
+          }
+        ],
+        "weatherUrl": [
+          {
+            "value": "http://www.worldweatheronline.com/Al-Jawf-weather/Al-Kufrah/LY.aspx"
+          }
+        ]
+      }
+    ],
+    "request": [
+      {
+        "query": "Lat 24.00 and Lon 24.00",
+        "type": "LatLon"
+      }
+    ],
+    "weather": [
+      {
+        "date": "2013-01-14",
+        "precipMM": "0.0",
+        "tempMaxC": "19",
+        "tempMaxF": "66",
+        "tempMinC": "10",
+        "tempMinF": "50",
+        "weatherCode": "119",
+        "weatherDesc": [
+          {
+            "value": "Cloudy"
+          }
+        ],
+        "weatherIconUrl": [
+          {
+            "value": "http://www.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0003_white_cloud.png"
+          }
+        ],
+        "winddir16Point": "ESE",
+        "winddirDegree": "106",
+        "winddirection": "ESE",
+        "windspeedKmph": "21",
+        "windspeedMiles": "13"
+      }
+    ]
+  }
+}

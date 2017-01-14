@@ -1,0 +1,548 @@
+<!DOCTYPE html><html>
+<head>
+<title>Devore CSN Sensor Animation</title><meta name="viewport"
+content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta charset="UTF-8">
+<style type="text/css">
+html, body, #map_canvas {
+margin: 0; padding: 0; height: 98%;}
+</style>
+
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript">
+var station={};
+station['22218965']={center: new google.maps.LatLng(34.174686,-118.109978)};
+station['7305953']={center: new google.maps.LatLng(34.138103,-118.124153)};
+station['22392459']={center: new google.maps.LatLng(34.169571,-118.158958)};
+station['13389355']={center: new google.maps.LatLng(34.118572,-118.113068)};
+station['37009483']={center: new google.maps.LatLng(34.098515,-118.113747)};
+station['13775233']={center: new google.maps.LatLng(34.121346,-118.100418)};
+station['14413262']={center: new google.maps.LatLng(34.163574,-118.174622)};
+station['14352065']={center: new google.maps.LatLng(34.139790,-118.123833)};
+station['13839965']={center: new google.maps.LatLng(34.118118,-118.139557)};
+station['23702245']={center: new google.maps.LatLng(34.195126,-118.179184)};
+station['13792418']={center: new google.maps.LatLng(34.129734,-118.101540)};
+station['18159343']={center: new google.maps.LatLng(34.125839,-118.168213)};
+station['16628903']={center: new google.maps.LatLng(34.136646,-118.138054)};
+station['15117635']={center: new google.maps.LatLng(34.151707,-118.167625)};
+station['9495683']={center: new google.maps.LatLng(34.123699,-118.002579)};
+station['37248785']={center: new google.maps.LatLng(34.019279,-118.276550)};
+station['25681043']={center: new google.maps.LatLng(34.175739,-118.112030)};
+station['14708917']={center: new google.maps.LatLng(34.129429,-118.087448)};
+station['15326927']={center: new google.maps.LatLng(34.121658,-118.101593)};
+station['17185358']={center: new google.maps.LatLng(34.107456,-118.135078)};
+station['28759397']={center: new google.maps.LatLng(34.020061,-118.289810)};
+station['7462002']={center: new google.maps.LatLng(34.150364,-118.018806)};
+station['29429464']={center: new google.maps.LatLng(34.020061,-118.289810)};
+station['8283978']={center: new google.maps.LatLng(34.125301,-118.060173)};
+station['28757707']={center: new google.maps.LatLng(34.020061,-118.289810)};
+station['7990471']={center: new google.maps.LatLng(34.138229,-118.124260)};
+station['37439615']={center: new google.maps.LatLng(34.159595,-118.144173)};
+station['16306387']={center: new google.maps.LatLng(34.202312,-118.128441)};
+station['11909263']={center: new google.maps.LatLng(33.980507,-116.534088)};
+station['28760717']={center: new google.maps.LatLng(34.020061,-118.289810)};
+station['26923652']={center: new google.maps.LatLng(34.161564,-118.110222)};
+station['3387022']={center: new google.maps.LatLng(34.136059,-118.127609)};
+station['36094767']={center: new google.maps.LatLng(34.135761,-118.149574)};
+station['18446990']={center: new google.maps.LatLng(34.132786,-118.085762)};
+station['4348007']={center: new google.maps.LatLng(34.138184,-118.114006)};
+station['20881647']={center: new google.maps.LatLng(34.183002,-118.161064)};
+station['8208502']={center: new google.maps.LatLng(34.109913,-118.116241)};
+station['7751973']={center: new google.maps.LatLng(34.143303,-118.141167)};
+station['13732026']={center: new google.maps.LatLng(34.154312,-118.426102)};
+station['15704451']={center: new google.maps.LatLng(33.585594,-117.662888)};
+station['33294878']={center: new google.maps.LatLng(34.173820,-118.096764)};
+station['20888432']={center: new google.maps.LatLng(34.173428,-118.066360)};
+station['17195964']={center: new google.maps.LatLng(34.124760,-118.105858)};
+station['7442241']={center: new google.maps.LatLng(34.141575,-118.123795)};
+station['20408288']={center: new google.maps.LatLng(34.136936,-118.126205)};
+station['25133024']={center: new google.maps.LatLng(34.116901,-118.005234)};
+station['12923019']={center: new google.maps.LatLng(34.144302,-118.161804)};
+station['29701748']={center: new google.maps.LatLng(34.126034,-118.175484)};
+station['7716744']={center: new google.maps.LatLng(34.134129,-118.164360)};
+station['30421572']={center: new google.maps.LatLng(34.136978,-118.126167)};
+station['1984346']={center: new google.maps.LatLng(34.136902,-118.126083)};
+station['30419835']={center: new google.maps.LatLng(34.136883,-118.126167)};
+station['15197662']={center: new google.maps.LatLng(34.245014,-118.255722)};
+station['15730340']={center: new google.maps.LatLng(34.153473,-118.122826)};
+station['4476002']={center: new google.maps.LatLng(34.136799,-118.125908)};
+station['7183277']={center: new google.maps.LatLng(34.221428,-118.220505)};
+station['20864266']={center: new google.maps.LatLng(34.135345,-118.178520)};
+station['28699304']={center: new google.maps.LatLng(34.172440,-118.124557)};
+station['4749006']={center: new google.maps.LatLng(34.189190,-118.121597)};
+station['36132830']={center: new google.maps.LatLng(34.137142,-118.124359)};
+station['21026829']={center: new google.maps.LatLng(34.207260,-118.156113)};
+station['276070']={center: new google.maps.LatLng(34.123508,-118.149017)};
+station['30814252']={center: new google.maps.LatLng(34.137020,-118.126198)};
+station['14036519']={center: new google.maps.LatLng(34.103493,-118.159470)};
+station['12654867']={center: new google.maps.LatLng(33.702545,-117.752945)};
+station['20975626']={center: new google.maps.LatLng(34.193275,-118.161034)};
+station['25969265']={center: new google.maps.LatLng(34.137070,-118.177704)};
+station['30374578']={center: new google.maps.LatLng(34.162365,-118.138878)};
+station['14326190']={center: new google.maps.LatLng(34.127399,-118.102852)};
+station['5867184']={center: new google.maps.LatLng(34.136887,-118.126236)};
+station['15966624']={center: new google.maps.LatLng(34.127014,-118.084915)};
+station['30669889']={center: new google.maps.LatLng(34.136974,-118.126190)};
+station['11475292']={center: new google.maps.LatLng(34.141991,-118.122421)};
+station['7660268']={center: new google.maps.LatLng(34.162373,-118.137405)};
+station['13769709']={center: new google.maps.LatLng(34.129356,-118.085800)};
+station['26115995']={center: new google.maps.LatLng(34.114376,-118.143082)};
+station['14135887']={center: new google.maps.LatLng(34.117767,-118.095161)};
+station['21556769']={center: new google.maps.LatLng(34.159729,-118.049034)};
+station['23816898']={center: new google.maps.LatLng(34.162720,-118.105034)};
+station['25982842']={center: new google.maps.LatLng(34.189423,-118.107140)};
+station['14022161']={center: new google.maps.LatLng(34.118614,-118.058060)};
+station['16094673']={center: new google.maps.LatLng(34.117928,-118.107079)};
+station['21189188']={center: new google.maps.LatLng(34.156361,-118.161041)};
+station['20329189']={center: new google.maps.LatLng(34.116085,-118.019646)};
+station['38094971']={center: new google.maps.LatLng(34.117664,-118.161659)};
+station['662251']={center: new google.maps.LatLng(34.140030,-118.098320)};
+station['12922013']={center: new google.maps.LatLng(34.138058,-118.124207)};
+station['7447590']={center: new google.maps.LatLng(34.137104,-118.124138)};
+station['363017']={center: new google.maps.LatLng(33.535931,-117.702904)};
+station['7689976']={center: new google.maps.LatLng(34.145203,-118.036560)};
+station['16190414']={center: new google.maps.LatLng(34.186131,-118.231682)};
+station['5938137']={center: new google.maps.LatLng(34.136898,-118.126228)};
+station['21718948']={center: new google.maps.LatLng(34.209183,-118.186028)};
+station['13750063']={center: new google.maps.LatLng(34.115398,-118.138878)};
+station['7537066']={center: new google.maps.LatLng(34.136673,-118.126884)};
+station['9503105']={center: new google.maps.LatLng(34.092682,-118.153854)};
+station['23725477']={center: new google.maps.LatLng(34.202873,-118.153946)};
+station['15506919']={center: new google.maps.LatLng(34.137108,-118.108276)};
+station['24982549']={center: new google.maps.LatLng(34.193180,-118.114677)};
+station['33370366']={center: new google.maps.LatLng(34.168598,-118.103111)};
+station['34994302']={center: new google.maps.LatLng(34.136871,-118.126060)};
+station['16434408']={center: new google.maps.LatLng(34.204391,-118.177559)};
+station['17434769']={center: new google.maps.LatLng(34.159096,-118.146484)};
+station['28396974']={center: new google.maps.LatLng(34.221195,-118.209709)};
+station['14821152']={center: new google.maps.LatLng(34.202778,-118.171486)};
+station['25990710']={center: new google.maps.LatLng(34.110828,-118.142670)};
+station['28784454']={center: new google.maps.LatLng(34.183475,-118.130493)};
+station['7793409']={center: new google.maps.LatLng(34.138653,-118.119171)};
+station['5205222']={center: new google.maps.LatLng(34.160023,-118.120590)};
+station['306311']={center: new google.maps.LatLng(34.145451,-117.642609)};
+station['15954792']={center: new google.maps.LatLng(33.882660,-118.403694)};
+
+var time={};
+time['1']={stations: new Array(25681043, 7751973),color: new Array("red","blue")};
+time['2']={stations: new Array(),color: new Array("")};
+time['3']={stations: new Array(13732026),color: new Array("blue")};
+time['4']={stations: new Array(29429464),color: new Array("blue")};
+time['5']={stations: new Array(),color: new Array("")};
+time['6']={stations: new Array(),color: new Array("")};
+time['7']={stations: new Array(13792418, 13792418),color: new Array("red","red")};
+time['8']={stations: new Array(),color: new Array("")};
+time['9']={stations: new Array(),color: new Array("")};
+time['10']={stations: new Array(),color: new Array("")};
+time['11']={stations: new Array(),color: new Array("")};
+time['12']={stations: new Array(),color: new Array("")};
+time['13']={stations: new Array(),color: new Array("")};
+time['14']={stations: new Array(8283978),color: new Array("blue")};
+time['15']={stations: new Array(13775233),color: new Array("red")};
+time['16']={stations: new Array(25681043, 25681043, 13775233, 15704451),color: new Array("red","red","red","blue")};
+time['17']={stations: new Array(28760717),color: new Array("blue")};
+time['18']={stations: new Array(18446990, 18446990),color: new Array("red","red")};
+time['19']={stations: new Array(),color: new Array("")};
+time['20']={stations: new Array(),color: new Array("")};
+time['21']={stations: new Array(),color: new Array("")};
+time['22']={stations: new Array(12654867, 37439615, 37439615),color: new Array("blue","red","blue")};
+time['23']={stations: new Array(37439615, 37439615),color: new Array("blue","blue")};
+time['24']={stations: new Array(276070),color: new Array("blue")};
+time['25']={stations: new Array(),color: new Array("")};
+time['26']={stations: new Array(),color: new Array("")};
+time['27']={stations: new Array(),color: new Array("")};
+time['28']={stations: new Array(),color: new Array("")};
+time['29']={stations: new Array(),color: new Array("")};
+time['30']={stations: new Array(),color: new Array("")};
+time['31']={stations: new Array(),color: new Array("")};
+time['32']={stations: new Array(),color: new Array("")};
+time['33']={stations: new Array(),color: new Array("")};
+time['34']={stations: new Array(37439615, 15730340, 37439615, 15730340, 37439615),color: new Array("red","red","red","red","red")};
+time['35']={stations: new Array(18446990),color: new Array("red")};
+time['36']={stations: new Array(13775233, 13775233),color: new Array("red","red")};
+time['37']={stations: new Array(13775233, 13775233, 13775233, 13775233),color: new Array("blue","red","blue","red")};
+time['38']={stations: new Array(13775233, 15730340),color: new Array("red","blue")};
+time['39']={stations: new Array(15730340),color: new Array("red")};
+time['40']={stations: new Array(12654867, 18446990, 12654867, 12654867),color: new Array("blue","red","blue","blue")};
+time['41']={stations: new Array(),color: new Array("")};
+time['42']={stations: new Array(),color: new Array("")};
+time['43']={stations: new Array(),color: new Array("")};
+time['44']={stations: new Array(),color: new Array("")};
+time['45']={stations: new Array(),color: new Array("")};
+time['46']={stations: new Array(),color: new Array("")};
+time['47']={stations: new Array(),color: new Array("")};
+time['48']={stations: new Array(),color: new Array("")};
+time['49']={stations: new Array(17195964, 17195964),color: new Array("red","red")};
+time['50']={stations: new Array(),color: new Array("")};
+time['51']={stations: new Array(13775233),color: new Array("blue")};
+time['52']={stations: new Array(),color: new Array("")};
+time['53']={stations: new Array(),color: new Array("")};
+time['54']={stations: new Array(),color: new Array("")};
+time['55']={stations: new Array(),color: new Array("")};
+time['56']={stations: new Array(),color: new Array("")};
+time['57']={stations: new Array(13775233, 13775233, 13775233),color: new Array("red","red","red")};
+time['58']={stations: new Array(13775233),color: new Array("red")};
+time['59']={stations: new Array(),color: new Array("")};
+time['60']={stations: new Array(),color: new Array("")};
+time['61']={stations: new Array(),color: new Array("")};
+time['62']={stations: new Array(28760717, 13732026, 28760717, 13732026, 13732026),color: new Array("blue","blue","blue","blue","blue")};
+time['63']={stations: new Array(),color: new Array("")};
+time['64']={stations: new Array(),color: new Array("")};
+time['65']={stations: new Array(14326190),color: new Array("red")};
+time['66']={stations: new Array(),color: new Array("")};
+time['67']={stations: new Array(),color: new Array("")};
+time['68']={stations: new Array(),color: new Array("")};
+time['69']={stations: new Array(13792418),color: new Array("red")};
+time['70']={stations: new Array(13792418),color: new Array("red")};
+time['71']={stations: new Array(15730340, 18446990, 15730340, 18446990, 18446990),color: new Array("red","red","blue","red","red")};
+time['72']={stations: new Array(),color: new Array("")};
+time['73']={stations: new Array(),color: new Array("")};
+time['74']={stations: new Array(),color: new Array("")};
+time['75']={stations: new Array(),color: new Array("")};
+time['76']={stations: new Array(),color: new Array("")};
+time['77']={stations: new Array(18446990, 18446990),color: new Array("red","red")};
+time['78']={stations: new Array(23702245),color: new Array("blue")};
+time['79']={stations: new Array(),color: new Array("")};
+time['80']={stations: new Array(),color: new Array("")};
+time['81']={stations: new Array(8283978),color: new Array("blue")};
+time['82']={stations: new Array(),color: new Array("")};
+time['83']={stations: new Array(),color: new Array("")};
+time['84']={stations: new Array(),color: new Array("")};
+time['85']={stations: new Array(),color: new Array("")};
+time['86']={stations: new Array(),color: new Array("")};
+time['87']={stations: new Array(),color: new Array("")};
+time['88']={stations: new Array(),color: new Array("")};
+time['89']={stations: new Array(),color: new Array("")};
+time['90']={stations: new Array(),color: new Array("")};
+time['91']={stations: new Array(),color: new Array("")};
+time['92']={stations: new Array(),color: new Array("")};
+time['93']={stations: new Array(18446990),color: new Array("red")};
+time['94']={stations: new Array(18446990, 18446990, 18446990),color: new Array("red","red","red")};
+time['95']={stations: new Array(),color: new Array("")};
+time['96']={stations: new Array(13839965),color: new Array("blue")};
+time['97']={stations: new Array(),color: new Array("")};
+time['98']={stations: new Array(),color: new Array("")};
+time['99']={stations: new Array(),color: new Array("")};
+time['100']={stations: new Array(),color: new Array("")};
+time['101']={stations: new Array(),color: new Array("")};
+time['102']={stations: new Array(),color: new Array("")};
+time['103']={stations: new Array(),color: new Array("")};
+time['104']={stations: new Array(),color: new Array("")};
+time['105']={stations: new Array(),color: new Array("")};
+time['106']={stations: new Array(),color: new Array("")};
+time['107']={stations: new Array(),color: new Array("")};
+time['108']={stations: new Array(),color: new Array("")};
+time['109']={stations: new Array(),color: new Array("")};
+time['110']={stations: new Array(),color: new Array("")};
+time['111']={stations: new Array(28757707),color: new Array("blue")};
+time['112']={stations: new Array(28757707, 28757707),color: new Array("blue","blue")};
+time['113']={stations: new Array(28757707, 28757707, 28757707, 28757707, 28757707, 28757707, 28757707),color: new Array("red","blue","red","red","red","red","blue")};
+time['114']={stations: new Array(),color: new Array("")};
+time['115']={stations: new Array(28757707),color: new Array("red")};
+time['116']={stations: new Array(),color: new Array("")};
+time['117']={stations: new Array(),color: new Array("")};
+time['118']={stations: new Array(29701748),color: new Array("red")};
+time['119']={stations: new Array(),color: new Array("")};
+time['120']={stations: new Array(12923019, 13839965),color: new Array("blue","blue")};
+time['121']={stations: new Array(29701748, 29701748),color: new Array("blue","blue")};
+time['122']={stations: new Array(29701748),color: new Array("blue")};
+time['123']={stations: new Array(),color: new Array("")};
+time['124']={stations: new Array(14413262),color: new Array("red")};
+time['125']={stations: new Array(),color: new Array("")};
+time['126']={stations: new Array(662251, 662251, 29701748, 29701748, 14413262, 29701748),color: new Array("blue","blue","red","red","red","red")};
+time['127']={stations: new Array(14413262, 14413262),color: new Array("red","red")};
+time['128']={stations: new Array(),color: new Array("")};
+time['129']={stations: new Array(),color: new Array("")};
+time['130']={stations: new Array(18446990, 18446990, 18446990, 18446990),color: new Array("red","red","red","red")};
+time['131']={stations: new Array(29429464),color: new Array("blue")};
+time['132']={stations: new Array(17195964),color: new Array("red")};
+time['133']={stations: new Array(),color: new Array("")};
+time['134']={stations: new Array(),color: new Array("")};
+time['135']={stations: new Array(),color: new Array("")};
+time['136']={stations: new Array(),color: new Array("")};
+time['137']={stations: new Array(),color: new Array("")};
+time['138']={stations: new Array(),color: new Array("")};
+time['139']={stations: new Array(),color: new Array("")};
+time['140']={stations: new Array(7751973),color: new Array("blue")};
+time['141']={stations: new Array(),color: new Array("")};
+time['142']={stations: new Array(),color: new Array("")};
+time['143']={stations: new Array(),color: new Array("")};
+time['144']={stations: new Array(),color: new Array("")};
+time['145']={stations: new Array(),color: new Array("")};
+time['146']={stations: new Array(21556769),color: new Array("red")};
+time['147']={stations: new Array(),color: new Array("")};
+time['148']={stations: new Array(21556769, 20864266),color: new Array("blue","blue")};
+time['149']={stations: new Array(),color: new Array("")};
+time['150']={stations: new Array(11475292),color: new Array("red")};
+time['151']={stations: new Array(),color: new Array("")};
+time['152']={stations: new Array(17195964),color: new Array("red")};
+time['153']={stations: new Array(18446990, 18446990),color: new Array("red","red")};
+time['154']={stations: new Array(),color: new Array("")};
+time['155']={stations: new Array(),color: new Array("")};
+time['156']={stations: new Array(25681043),color: new Array("blue")};
+time['157']={stations: new Array(25681043, 25681043),color: new Array("blue","blue")};
+time['158']={stations: new Array(20329189),color: new Array("red")};
+time['159']={stations: new Array(20329189, 276070, 20329189, 14326190, 13792418, 25681043),color: new Array("blue","red","blue","red","red","blue")};
+time['160']={stations: new Array(33294878, 13792418, 12654867, 20408288, 15326927),color: new Array("blue","red","red","red","blue")};
+time['161']={stations: new Array(20408288, 15730340, 20408288, 17195964, 28699304, 13792418, 15730340),color: new Array("red","blue","red","blue","blue","red","blue")};
+time['162']={stations: new Array(18446990, 7660268, 30374578, 28699304, 12923019, 15704451, 28699304, 15704451, 15704451, 15704451),color: new Array("red","red","red","blue","blue","red","blue","red","red","blue")};
+time['163']={stations: new Array(15704451, 28699304, 15704451),color: new Array("red","blue","blue")};
+time['164']={stations: new Array(28699304, 28699304, 15730340, 13792418, 28699304),color: new Array("blue","blue","blue","red","blue")};
+time['165']={stations: new Array(15730340, 14326190, 13792418, 11475292, 13792418, 15730340, 13792418, 14352065),color: new Array("blue","red","red","red","red","blue","red","red")};
+time['166']={stations: new Array(12654867, 15326927, 20888432, 18446990, 20329189, 15326927, 13732026, 20329189, 15326927, 18446990, 21556769, 8283978, 20888432, 7689976),color: new Array("red","blue","red","blue","blue","blue","blue","blue","blue","blue","blue","blue","blue","blue")};
+time['167']={stations: new Array(28699304, 33370366, 28699304, 23816898, 13732026, 13792418, 20329189, 33294878, 20408288, 15730340, 33370366, 4348007, 14326190, 23816898, 13732026, 662251, 13792418, 15966624, 8208502, 13769709, 15730340, 33370366, 23816898, 18446990, 15730340, 33370366, 23816898, 13792418, 7689976, 23816898, 7689976, 33294878, 13792418),color: new Array("blue","red","blue","red","blue","blue","blue","red","red","red","red","blue","blue","red","blue","blue","red","blue","blue","blue","red","red","blue","blue","red","blue","blue","red","blue","blue","blue","blue","blue")};
+time['168']={stations: new Array(21026829, 21556769, 33294878, 17195964, 14036519, 7305953, 5938137, 5205222, 15326927, 30419835, 24982549, 37439615, 18446990, 7447590, 34994302, 7793409, 26923652, 20408288, 7537066, 20975626, 28784454, 12922013, 25982842, 7716744, 7442241, 30374578, 23725477, 30814252, 5867184, 25990710, 3387022, 21189188, 4476002, 13839965, 37009483, 15506919, 14821152, 33294878, 36094767, 1984346, 30669889, 21556769, 20888432, 16628903, 4348007, 14326190, 7990471, 5938137, 21026829, 17434769, 5205222, 4749006, 25681043, 15326927, 30419835, 24982549, 37439615, 7447590, 34994302, 7793409, 26923652, 34994302, 20408288, 7537066, 20975626, 26923652, 28784454, 12922013, 7716744, 30374578, 28784454, 30814252, 20975626, 5867184, 23725477, 7442241, 25990710, 3387022, 4476002, 3387022, 33294878, 20888432, 4348007, 14326190, 5938137, 30419835, 24982549, 37439615, 7447590, 20408288, 34994302, 12922013, 20975626, 30814252, 5867184, 15730340, 7442241, 30374578, 33294878, 23702245, 7660268, 14326190, 15326927, 23816898, 24982549, 37439615, 7447590, 34994302, 15730340, 23816898, 37439615, 7689976, 30374578),color: new Array("blue","blue","red","blue","blue","blue","blue","blue","red","blue","red","blue","red","red","red","blue","blue","blue","blue","red","blue","blue","blue","blue","blue","red","red","red","red","blue","red","red","blue","blue","blue","blue","blue","red","blue","blue","blue","blue","blue","blue","blue","blue","blue","red","blue","blue","blue","blue","blue","red","blue","red","red","red","blue","blue","blue","blue","blue","red","red","blue","blue","red","blue","red","blue","red","red","red","red","blue","blue","red","blue","red","red","blue","blue","blue","blue","blue","blue","red","blue","blue","blue","blue","blue","blue","blue","red","blue","red","red","blue","blue","blue","blue","blue","red","red","red","red","blue","blue","blue","blue","blue")};
+time['169']={stations: new Array(16434408, 7660268, 23702245, 20329189, 38094971, 14352065, 15117635, 14036519, 12654867, 11475292, 17195964, 28699304, 14413262, 13732026, 7305953, 12923019, 20864266, 21189188, 9503105, 15506919, 16434408, 30669889, 7660268, 23702245, 16628903, 38094971, 14352065, 7990471, 14036519, 21026829, 12654867, 5205222, 28699304, 15326927, 13732026, 7305953, 21189188, 23725477, 3387022, 15506919, 3387022, 30669889, 16434408, 3387022, 38094971, 4348007, 3387022, 7305953, 20408288, 21189188, 30669889, 7442241, 30374578, 3387022, 24982549, 7447590, 34994302, 30374578, 23816898, 33294878, 7442241, 3387022, 30374578, 24982549, 23816898, 37439615, 34994302, 3387022),color: new Array("blue","red","red","blue","red","blue","blue","blue","blue","blue","blue","red","blue","blue","blue","blue","blue","red","blue","blue","blue","blue","red","red","blue","red","blue","blue","blue","blue","blue","blue","blue","red","blue","red","red","blue","red","red","red","blue","blue","red","blue","blue","red","red","blue","blue","blue","blue","red","red","blue","blue","blue","red","blue","blue","blue","red","red","blue","blue","blue","blue","blue")};
+time['170']={stations: new Array(18159343, 16190414, 18446990, 7183277, 18446990, 20329189, 18159343, 18446990, 15506919, 5938137, 5938137, 20975626, 5867184, 18446990, 16434408, 7660268, 15326927, 15326927, 24982549, 15326927, 3387022, 24982549, 24982549),color: new Array("blue","blue","blue","blue","blue","blue","blue","blue","blue","blue","blue","blue","blue","blue","blue","blue","blue","red","red","red","blue","red","red")};
+time['171']={stations: new Array(8283978, 7793409, 16190414, 13839965, 13769709, 11475292, 12923019, 8283978, 16190414, 25681043, 25990710, 20329189, 16628903, 14036519, 13769709, 12923019, 5205222, 8283978, 30814252, 25990710, 23725477, 16628903, 12923019, 30814252, 18446990, 25990710, 7660268, 23725477, 34994302, 7442241, 15326927, 4348007, 7442241, 20329189, 7442241, 13792418),color: new Array("blue","blue","blue","blue","blue","blue","blue","blue","blue","red","blue","blue","blue","blue","blue","red","blue","blue","blue","blue","blue","blue","red","blue","blue","blue","blue","blue","blue","red","blue","blue","red","blue","blue","blue")};
+time['172']={stations: new Array(7537066, 37009483, 15117635, 14413262, 15117635, 23702245, 14413262, 15117635, 18159343, 12922013, 16190414, 38094971, 15506919, 14036519, 7305953, 18159343, 5205222, 20975626, 15730340, 14036519, 20975626, 12923019, 18159343, 5205222, 23725477, 7660268, 12923019, 5205222, 12923019, 7660268, 30374578, 25990710, 12923019, 15326927, 7660268, 12923019, 12923019, 30374578, 7660268, 24982549, 12923019, 30374578, 12923019, 4348007),color: new Array("blue","blue","blue","blue","blue","blue","blue","blue","blue","blue","blue","blue","blue","blue","blue","blue","blue","blue","blue","blue","blue","red","blue","blue","blue","red","red","blue","red","red","red","blue","red","blue","red","blue","blue","red","red","blue","blue","blue","blue","blue")};
+time['173']={stations: new Array(7751973, 20864266, 12923019, 12923019),color: new Array("red","blue","blue","blue")};
+time['174']={stations: new Array(15704451, 13732026, 13732026, 12923019),color: new Array("blue","blue","blue","blue")};
+time['175']={stations: new Array(29429464, 29429464),color: new Array("red","red")};
+time['176']={stations: new Array(28760717, 28759397, 28760717, 29429464, 28760717, 29429464, 13732026, 29429464),color: new Array("blue","blue","blue","blue","blue","blue","blue","red")};
+time['177']={stations: new Array(28759397, 28760717, 13732026),color: new Array("blue","blue","blue")};
+time['178']={stations: new Array(15704451, 29429464),color: new Array("blue","red")};
+time['179']={stations: new Array(13732026),color: new Array("blue")};
+time['180']={stations: new Array(29429464, 29429464, 28757707),color: new Array("blue","blue","blue")};
+time['181']={stations: new Array(),color: new Array("")};
+time['182']={stations: new Array(7793409, 7793409, 276070, 25681043, 29429464, 29429464),color: new Array("blue","red","red","red","blue","blue")};
+time['183']={stations: new Array(29429464, 29429464, 25681043, 25681043),color: new Array("blue","blue","blue","blue")};
+time['184']={stations: new Array(),color: new Array("")};
+time['185']={stations: new Array(7793409, 7793409),color: new Array("red","red")};
+time['186']={stations: new Array(29701748),color: new Array("blue")};
+time['187']={stations: new Array(),color: new Array("")};
+time['188']={stations: new Array(),color: new Array("")};
+time['189']={stations: new Array(),color: new Array("")};
+time['190']={stations: new Array(),color: new Array("")};
+time['191']={stations: new Array(),color: new Array("")};
+time['192']={stations: new Array(),color: new Array("")};
+time['193']={stations: new Array(),color: new Array("")};
+time['194']={stations: new Array(),color: new Array("")};
+time['195']={stations: new Array(),color: new Array("")};
+time['196']={stations: new Array(28757707),color: new Array("blue")};
+time['197']={stations: new Array(),color: new Array("")};
+time['198']={stations: new Array(25681043),color: new Array("blue")};
+time['199']={stations: new Array(),color: new Array("")};
+time['200']={stations: new Array(13792418, 13792418, 13792418, 13792418),color: new Array("red","red","red","red")};
+time['201']={stations: new Array(13792418),color: new Array("red")};
+time['202']={stations: new Array(25681043),color: new Array("blue")};
+time['203']={stations: new Array(17195964, 17195964),color: new Array("blue","red")};
+time['204']={stations: new Array(),color: new Array("")};
+time['205']={stations: new Array(),color: new Array("")};
+time['206']={stations: new Array(),color: new Array("")};
+time['207']={stations: new Array(),color: new Array("")};
+time['208']={stations: new Array(37439615, 37439615),color: new Array("blue","red")};
+time['209']={stations: new Array(),color: new Array("")};
+time['210']={stations: new Array(),color: new Array("")};
+time['211']={stations: new Array(),color: new Array("")};
+time['212']={stations: new Array(37439615),color: new Array("red")};
+time['213']={stations: new Array(),color: new Array("")};
+time['214']={stations: new Array(37439615),color: new Array("blue")};
+time['215']={stations: new Array(),color: new Array("")};
+time['216']={stations: new Array(13775233, 18159343, 18159343, 18159343, 18159343, 18159343),color: new Array("red","red","red","red","red","blue")};
+time['217']={stations: new Array(),color: new Array("")};
+time['218']={stations: new Array(13775233, 13775233, 13775233, 13775233),color: new Array("red","red","red","red")};
+time['219']={stations: new Array(12923019),color: new Array("red")};
+time['220']={stations: new Array(8283978, 8283978),color: new Array("blue","blue")};
+time['221']={stations: new Array(18159343),color: new Array("red")};
+time['222']={stations: new Array(18159343, 18159343, 13775233),color: new Array("red","blue","red")};
+time['223']={stations: new Array(13775233, 13775233),color: new Array("red","red")};
+time['224']={stations: new Array(),color: new Array("")};
+time['225']={stations: new Array(),color: new Array("")};
+time['226']={stations: new Array(363017, 13792418),color: new Array("blue","red")};
+time['227']={stations: new Array(),color: new Array("")};
+time['228']={stations: new Array(),color: new Array("")};
+time['229']={stations: new Array(18446990),color: new Array("red")};
+time['230']={stations: new Array(),color: new Array("")};
+time['231']={stations: new Array(),color: new Array("")};
+time['232']={stations: new Array(),color: new Array("")};
+time['233']={stations: new Array(),color: new Array("")};
+time['234']={stations: new Array(20864266, 13775233),color: new Array("blue","red")};
+time['235']={stations: new Array(13775233, 13775233),color: new Array("blue","red")};
+time['236']={stations: new Array(20864266, 20864266),color: new Array("blue","blue")};
+time['237']={stations: new Array(13775233, 13792418, 13792418),color: new Array("red","blue","red")};
+time['238']={stations: new Array(),color: new Array("")};
+time['239']={stations: new Array(),color: new Array("")};
+time['240']={stations: new Array(),color: new Array("")};
+time['241']={stations: new Array(),color: new Array("")};
+time['242']={stations: new Array(),color: new Array("")};
+time['243']={stations: new Array(),color: new Array("")};
+time['244']={stations: new Array(),color: new Array("")};
+time['245']={stations: new Array(),color: new Array("")};
+time['246']={stations: new Array(),color: new Array("")};
+time['247']={stations: new Array(),color: new Array("")};
+time['248']={stations: new Array(),color: new Array("")};
+time['249']={stations: new Array(28760717),color: new Array("blue")};
+time['250']={stations: new Array(),color: new Array("")};
+time['251']={stations: new Array(),color: new Array("")};
+time['252']={stations: new Array(18446990, 18446990, 18446990),color: new Array("red","red","red")};
+time['253']={stations: new Array(),color: new Array("")};
+time['254']={stations: new Array(3387022),color: new Array("red")};
+time['255']={stations: new Array(),color: new Array("")};
+time['256']={stations: new Array(),color: new Array("")};
+time['257']={stations: new Array(23702245, 23702245),color: new Array("blue","blue")};
+time['258']={stations: new Array(),color: new Array("")};
+time['259']={stations: new Array(),color: new Array("")};
+time['260']={stations: new Array(),color: new Array("")};
+time['261']={stations: new Array(8283978),color: new Array("blue")};
+time['262']={stations: new Array(),color: new Array("")};
+time['263']={stations: new Array(13775233),color: new Array("red")};
+time['264']={stations: new Array(),color: new Array("")};
+time['265']={stations: new Array(12923019),color: new Array("red")};
+time['266']={stations: new Array(),color: new Array("")};
+time['267']={stations: new Array(),color: new Array("")};
+time['268']={stations: new Array(),color: new Array("")};
+time['269']={stations: new Array(),color: new Array("")};
+time['270']={stations: new Array(),color: new Array("")};
+time['271']={stations: new Array(),color: new Array("")};
+time['272']={stations: new Array(),color: new Array("")};
+time['273']={stations: new Array(),color: new Array("")};
+time['274']={stations: new Array(),color: new Array("")};
+time['275']={stations: new Array(),color: new Array("")};
+time['276']={stations: new Array(),color: new Array("")};
+time['277']={stations: new Array(),color: new Array("")};
+time['278']={stations: new Array(),color: new Array("")};
+time['279']={stations: new Array(25681043, 25681043, 25681043, 25681043, 25681043),color: new Array("blue","blue","blue","blue","blue")};
+time['280']={stations: new Array(25681043),color: new Array("blue")};
+time['281']={stations: new Array(),color: new Array("")};
+time['282']={stations: new Array(7793409, 7793409, 7793409),color: new Array("blue","blue","blue")};
+time['283']={stations: new Array(),color: new Array("")};
+time['284']={stations: new Array(),color: new Array("")};
+time['285']={stations: new Array(),color: new Array("")};
+time['286']={stations: new Array(),color: new Array("")};
+time['287']={stations: new Array(),color: new Array("")};
+time['288']={stations: new Array(18446990, 18446990, 18446990, 18446990, 18446990, 18446990, 18446990, 18446990),color: new Array("blue","blue","blue","blue","blue","blue","red","red")};
+time['289']={stations: new Array(),color: new Array("")};
+time['290']={stations: new Array(),color: new Array("")};
+time['291']={stations: new Array(),color: new Array("")};
+time['292']={stations: new Array(),color: new Array("")};
+time['293']={stations: new Array(14326190),color: new Array("blue")};
+time['294']={stations: new Array(28757707),color: new Array("blue")};
+time['295']={stations: new Array(),color: new Array("")};
+time['296']={stations: new Array(),color: new Array("")};
+time['297']={stations: new Array(),color: new Array("")};
+time['298']={stations: new Array(),color: new Array("")};
+time['299']={stations: new Array(13792418),color: new Array("red")};
+time['300']={stations: new Array(662251, 662251, 662251),color: new Array("red","red","red")};
+
+
+
+var epicentre = new google.maps.LatLng(34.234,-117.434);
+var map;
+var pickmarkers=[];
+var sec=0;
+var id=0;
+var play = new Boolean(true);
+
+//var x=document.getElementById("demo");     //////this was due to "binding loss" haha now i know.
+
+function display(sec){
+	document.getElementById("demo").innerHTML=sec;
+}
+
+function animation(){
+//var image1 = 'images/tiny_red.png';
+//var image2 = 'images/tiny_blue.png';
+var image ='images/tiny_red.png';;
+		//sec=sec+1;
+		if (sec==300) {
+		//return;
+		window.clearInterval(ow);
+		//sec=1;
+		//epiMarker.setMap(null);
+		}
+		else {
+		sec=sec+1;
+		if  (sec==148){
+			var epi = 'images/star.png'; 
+			var epiMarker = new google.maps.Marker({position: epicentre, map: map, icon: epi});
+			}
+		}
+		//try{
+		//x.innerHTML=sec;
+		//}
+		display(sec);
+        if (pickmarkers){
+        for (i in pickmarkers) {
+                pickmarkers[i].setMap(null);
+            }
+                pickmarkers.length = 0;
+        }
+        if (time[sec].stations.length!=0){
+			for (id=0;id<time[sec].stations.length;id=id+1) {
+				//if (time[sec].color[id]=="red"){image=image1;}
+				//else {image=image2;}
+				var marker = new google.maps.Marker({
+                position: station[time[sec].stations[id]].center,
+                map: map,
+                icon: image
+				});
+            pickmarkers.push(marker);
+			}
+		}
+
+}
+
+
+///*
+function PlayControl(controlDiv,map){
+var control=this;
+controlDiv.style.padding='5px';
+
+
+  // Set CSS for the control border
+  var doToggleUI = document.createElement('div'); 
+  doToggleUI.style.backgroundColor = 'white';
+  doToggleUI.style.borderStyle = 'solid';
+  doToggleUI.style.borderWidth = '2px';
+  doToggleUI.style.cursor = 'pointer';
+  doToggleUI.style.textAlign = 'center';
+  doToggleUI.title = 'Click to play/pause';
+  controlDiv.appendChild(doToggleUI);
+
+  // Set CSS for the control interior
+  var doToggleText = document.createElement('div');
+  doToggleText.style.fontFamily = 'Arial,sans-serif';
+  doToggleText.style.fontSize = '12px';
+  doToggleText.style.paddingLeft = '4px';
+  doToggleText.style.paddingRight = '4px';
+  doToggleText.innerHTML = '<b>play/pause</b>';
+  doToggleUI.appendChild(doToggleText);
+  
+  google.maps.event.addDomListener(doToggleUI,'click',function(){
+	play=!play;
+	if (play==false){
+	  ow=window.setInterval('animation()',100);
+	  }
+	else{
+	  window.clearInterval(ow);
+	  }
+	});
+}
+//*/
+
+function initialize() {
+    var myOptions = {
+        zoom: 10,
+        center: new google.maps.LatLng(34.156098,-118.131808),
+        mapTypeId: google.maps.MapTypeId.TERRAIN
+    };
+    map = new google.maps.Map(document.getElementById('map_canvas'),myOptions);
+	
+	var playControlDiv=document.createElement('div')
+	var playControl = new PlayControl(playControlDiv,map)
+    	
+	playControlDiv.index = 1;
+    map.controls[google.maps.ControlPosition.TOP_RIGHT].push(playControlDiv);
+	
+	//ow=window.setInterval('animation()',100);	
+}	
+
+google.maps.event.addDomListener(window, 'load', initialize); 
+</script>
+</head> 
+<body> 
+<div id="map_canvas"></div>
+<div><p id="demo" align="center">Press Play</p></div>  
+</body>
+</html>
